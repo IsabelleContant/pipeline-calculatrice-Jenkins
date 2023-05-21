@@ -26,6 +26,7 @@ pipeline {
                     junit "test-reports/results.xml"
                 }
             }
+        }
         stage('Deliver') {
             agent any
             environment {
@@ -43,7 +44,6 @@ pipeline {
                     archiveArtifacts "${env.BUILD_ID}/sources/dist/prog"
                 }
             }
-        }
         }
     }
 }
